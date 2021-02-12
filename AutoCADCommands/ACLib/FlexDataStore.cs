@@ -1,7 +1,7 @@
-﻿using Autodesk.AutoCAD.DatabaseServices;
-using System.Linq;
+﻿using System.Linq;
+using Autodesk.AutoCAD.DatabaseServices;
 
-namespace Dreambuild.AutoCAD
+namespace AutoCADCommands.ACLib
 {
     /// <summary>
     /// Flexible data store. FDS is our v3 data store mechanism. Old ways FXD (v1) and CD (v2) should be deprecated.

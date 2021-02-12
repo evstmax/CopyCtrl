@@ -1,21 +1,22 @@
-﻿using Autodesk.AutoCAD.ApplicationServices;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using AutoCADCommands.ACLib.GUIs;
+using AutoCADCommands.ACLib.Internal;
+using Autodesk.AutoCAD.ApplicationServices;
 using Autodesk.AutoCAD.DatabaseServices;
 using Autodesk.AutoCAD.EditorInput;
 using Autodesk.AutoCAD.Geometry;
 using Autodesk.AutoCAD.Runtime;
-using Dreambuild.AutoCAD.Internal;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
-namespace Dreambuild.AutoCAD
+namespace AutoCADCommands.ACLib
 {
     /// <summary>
     /// Tests and samples
     /// </summary>
     public class CodePackTest
     {
-        #region Commands that you can provide out of the box in your application
+        #region Commands that you can provide out of the box in your application  
 
         /// <summary>
         /// View or edit custom dictionaries of DWG.

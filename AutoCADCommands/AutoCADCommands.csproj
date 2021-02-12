@@ -26,7 +26,7 @@
     <WarningLevel>4</WarningLevel>
     <DocumentationFile>..\bin\AutoCADCommands.xml</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
-    <CodeAnalysisRuleSet>AutoCADCommands.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>ACLib\AutoCADCommands.ruleset</CodeAnalysisRuleSet>
     <RunCodeAnalysis>true</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -37,7 +37,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
-    <CodeAnalysisRuleSet>AutoCADCommands.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet>ACLib\AutoCADCommands.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AcCoreMgd, Version=23.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -104,62 +104,63 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Algorithms.cs" />
-    <Compile Include="App.cs" />
-    <Compile Include="Commands.cs" />
-    <Compile Include="FlexDataStore.cs" />
-    <Compile Include="Internal\CustomDictionary.cs" />
-    <Compile Include="DbHelper.cs" />
-    <Compile Include="GUIs\DictionaryViewer.xaml.cs">
+    <Compile Include="ACLib\Algorithms.cs" />
+    <Compile Include="ACLib\App.cs" />
+    <Compile Include="ACLib\Commands.cs" />
+    <Compile Include="ACLib\FlexDataStore.cs" />
+    <Compile Include="ACLib\Internal\CustomDictionary.cs" />
+    <Compile Include="ACLib\DbHelper.cs" />
+    <Compile Include="ACLib\GUIs\DictionaryViewer.xaml.cs">
       <DependentUpon>DictionaryViewer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gui.cs" />
-    <Compile Include="GUIs\InputBox.xaml.cs">
+    <Compile Include="ACLib\Gui.cs" />
+    <Compile Include="ACLib\GUIs\InputBox.xaml.cs">
       <DependentUpon>InputBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="GUIs\TaskProgressWindow.xaml.cs">
+    <Compile Include="ACLib\GUIs\TaskProgressWindow.xaml.cs">
       <DependentUpon>TaskProgressWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Interaction.cs" />
-    <Compile Include="Internal\JigDrag.cs" />
-    <Compile Include="Layouts.cs" />
-    <Compile Include="GUIs\MultiInputs.xaml.cs">
+    <Compile Include="ACLib\Interaction.cs" />
+    <Compile Include="ACLib\Internal\JigDrag.cs" />
+    <Compile Include="ACLib\Layouts.cs" />
+    <Compile Include="ACLib\GUIs\MultiInputs.xaml.cs">
       <DependentUpon>MultiInputs.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="QuickSelection.cs" />
-    <Compile Include="SymbolPack.cs" />
-    <Compile Include="Test.cs" />
-    <Compile Include="GUIs\TextReport.xaml.cs">
+    <Compile Include="ACLib\QuickSelection.cs" />
+    <Compile Include="ACLib\SymbolPack.cs" />
+    <Compile Include="ACLib\Test.cs" />
+    <Compile Include="ACLib\GUIs\TextReport.xaml.cs">
       <DependentUpon>TextReport.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="GUIs\DictionaryViewer.xaml">
+    <Page Include="ACLib\GUIs\DictionaryViewer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GUIs\InputBox.xaml">
+    <Page Include="ACLib\GUIs\InputBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GUIs\MultiInputs.xaml">
+    <Page Include="ACLib\GUIs\MultiInputs.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="GUIs\TaskProgressWindow.xaml">
+    <Page Include="ACLib\GUIs\TaskProgressWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="GUIs\TextReport.xaml">
+    <Page Include="ACLib\GUIs\TextReport.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <None Include="AutoCADCommands.ruleset" />
-    <None Include="packages.config" />
+    <None Include="ACLib\AutoCADCommands.ruleset" />
+    <None Include="ACLib\packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

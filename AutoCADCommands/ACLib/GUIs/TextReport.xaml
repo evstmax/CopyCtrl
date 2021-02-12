@@ -1,4 +1,4 @@
-﻿<Window x:Class="Dreambuild.AutoCAD.TextReport"
+﻿<Window x:Class="AutoCADCommands.ACLib.GUIs.TextReport"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Height="300" Width="300" WindowStartupLocation="CenterScreen" Topmost="True" ShowInTaskbar="False">

@@ -1,14 +1,14 @@
-﻿using Autodesk.AutoCAD.ApplicationServices;
-using Autodesk.AutoCAD.DatabaseServices;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Text;
+using Autodesk.AutoCAD.ApplicationServices;
+using Autodesk.AutoCAD.DatabaseServices;
 
-namespace Dreambuild.AutoCAD
+namespace AutoCADCommands.ACLib
 {
     /// <summary>
     /// Application and multi-docs.
@@ -204,7 +204,7 @@ namespace Dreambuild.AutoCAD
     /// <summary>
     /// The polyline needs cleanup exception.
     /// </summary>
-    [SerializableAttribute]
+    [Serializable]
     public class PolylineNeedsCleanupException : Exception
     {
         /// <summary>
@@ -344,13 +344,23 @@ namespace Dreambuild.AutoCAD
     /// </summary>
     public static class Arx
     {
+        
+
+        
+
+        
+    }
+
+    internal static class SafeNativeMethods
+    {
         [DllImport("acad.exe", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl, EntryPoint = "acedCmd")]
         internal static extern int acedCmd(IntPtr vlist);
 
-        [DllImport("acad.exe", CharSet = CharSet.Auto, CallingConvention = CallingConvention.Cdecl)]
+        [DllImport("acad.exe", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl)]
         internal static extern int ads_queueexpr(string strExpr);
 
-        [DllImport("acad.exe", CharSet = CharSet.Auto, CallingConvention = CallingConvention.Cdecl, EntryPoint = "?acedPostCommand@@YAHPB_W@Z")]
+        [DllImport("acad.exe", CharSet = CharSet.Unicode, CallingConvention = CallingConvention.Cdecl, EntryPoint = "?acedPostCommand@@YAHPB_W@Z")]
         internal static extern int acedPostCommand(string strExpr);
     }
+
 }

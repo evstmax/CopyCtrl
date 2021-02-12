@@ -1,9 +1,9 @@
-﻿using Autodesk.AutoCAD.ApplicationServices;
-using Autodesk.AutoCAD.DatabaseServices;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using Autodesk.AutoCAD.ApplicationServices;
+using Autodesk.AutoCAD.DatabaseServices;
 
-namespace Dreambuild.AutoCAD.Internal
+namespace AutoCADCommands.ACLib.Internal
 {
     /// <summary>
     /// DWG global flexible data storage.

@@ -1,15 +1,16 @@
-﻿using Autodesk.AutoCAD.Windows;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
+using AutoCADCommands.ACLib.GUIs;
+using Autodesk.AutoCAD.Windows;
 using AcadApplication = Autodesk.AutoCAD.ApplicationServices.Application;
 using WinFormsPropertyGrid = System.Windows.Forms.PropertyGrid;
 using WpfWindow = System.Windows.Window;
 
-namespace Dreambuild.AutoCAD
+namespace AutoCADCommands.ACLib
 {
     /// <summary>
     /// The GUI component gallery.

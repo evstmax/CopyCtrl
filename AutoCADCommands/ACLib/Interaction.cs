@@ -1,20 +1,20 @@
-﻿using Autodesk.AutoCAD.Colors;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
+using AutoCADCommands.ACLib.Internal;
+using Autodesk.AutoCAD.Colors;
 using Autodesk.AutoCAD.DatabaseServices;
 using Autodesk.AutoCAD.EditorInput;
 using Autodesk.AutoCAD.Geometry;
 using Autodesk.AutoCAD.GraphicsInterface;
 using Autodesk.Windows;
-using Dreambuild.AutoCAD.Internal;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Windows.Forms;
 using Application = Autodesk.AutoCAD.ApplicationServices.Application;
 using ColorDialog = Autodesk.AutoCAD.Windows.ColorDialog;
 using Polyline = Autodesk.AutoCAD.DatabaseServices.Polyline;
 
-namespace Dreambuild.AutoCAD
+namespace AutoCADCommands.ACLib
 {
     /// <summary>
     /// Command-line user interactions.
@@ -480,18 +480,16 @@ namespace Dreambuild.AutoCAD
             return Array.Empty<ObjectId>();
         }
 
-        [DllImport("user32.dll")]
-        private static extern IntPtr SetFocus(IntPtr hwnd);
+        
 
-        [DllImport("user32.dll")]
-        private static extern IntPtr SetParent(IntPtr child, IntPtr parent);
+       
 
         /// <summary>
         /// Sets focus to the active document.
         /// </summary>
         public static void SetActiveDocFocus()
         {
-            Interaction.SetFocus(Application.DocumentManager.MdiActiveDocument.Window.Handle);
+            NativeMethods.SetFocus(Application.DocumentManager.MdiActiveDocument.Window.Handle);
         }
 
         /// <summary>
@@ -1275,5 +1273,14 @@ namespace Dreambuild.AutoCAD
                 return false;
             }
         }
+    }
+
+    internal static class NativeMethods
+    {
+        [DllImport("user32.dll")]
+        internal static extern IntPtr SetFocus(IntPtr hwnd);
+
+        [DllImport("user32.dll")]
+        internal static extern IntPtr SetParent(IntPtr child, IntPtr parent);
     }
 }

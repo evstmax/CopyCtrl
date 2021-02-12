@@ -1,9 +1,9 @@
-﻿using Autodesk.AutoCAD.DatabaseServices;
+﻿using System;
+using Autodesk.AutoCAD.DatabaseServices;
 using Autodesk.AutoCAD.EditorInput;
 using Autodesk.AutoCAD.GraphicsInterface;
-using System;
 
-namespace Dreambuild.AutoCAD.Internal
+namespace AutoCADCommands.ACLib.Internal
 {
     internal class FlexEntityJig : EntityJig
     {
